@@ -73,7 +73,6 @@ print("Saved reordered file as 'preprocessed_ASV_level_2.csv'")
 
 ######
 
-import pandas as pd
 
 # Load your reordered file
 df = pd.read_csv('preprocessed_ASV_level_2.csv')
@@ -89,6 +88,23 @@ df_clean.to_csv('preprocessed_ASV_level_3.csv', index=False)
 
 print(f"Saved cleaned file as 'preprocessed_ASV_level_3.csv' (dropped rows with missing {second_col})")
 
+####
+
+df = pd.read_csv('preprocessed_ASV_level_3.csv')
+
+print("Shape (rows × columns):", df.shape)
+print("\nColumn names:")
+print(df.columns.tolist())
 
 
+print("\nHead (first 5 rows):")
+print(df.head())
+
+
+print("\nTail (last 5 rows):")
+print(df.tail())
+
+
+print("\nInfo:")
+print(df.info())
 
