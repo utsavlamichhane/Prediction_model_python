@@ -71,6 +71,24 @@ df.to_csv('preprocessed_ASV_level_2.csv', index=False)
 
 print("Saved reordered file as 'preprocessed_ASV_level_2.csv'")
 
+######
+
+import pandas as pd
+
+# Load your reordered file
+df = pd.read_csv('preprocessed_ASV_level_2.csv')
+
+# Identify the name of the second column
+second_col = df.columns[1]
+
+# Drop rows where that column is NaN
+df_clean = df.dropna(subset=[second_col])
+
+# Save to the next version
+df_clean.to_csv('preprocessed_ASV_level_3.csv', index=False)
+
+print(f"Saved cleaned file as 'preprocessed_ASV_level_3.csv' (dropped rows with missing {second_col})")
+
 
 
 
